@@ -9,6 +9,7 @@ module.exports = {
   googleAnalyticsID: '',
   googleVerification: '',
   name: 'Jonathan Amparo',
+  username: 'jonamparo',
   location: 'Washington, DC',
   email: 'jonathanmamparo@gmail.com',
   github: 'https://github.com/jonamparo',

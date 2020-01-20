@@ -49,17 +49,17 @@ const mixins = {
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
-    color: ${colors.green};
+    color: ${colors.blue};
     &:hover,
     &:focus,
     &:active {
-      color: ${colors.green};
+      color: ${colors.blue};
       outline: 0;
       &:after {
         width: 100%;
       }
       & > * {
-        color: ${colors.green} !important;
+        color: ${colors.blue} !important;
         transition: ${theme.transition};
       }
     }
@@ -70,9 +70,35 @@ const mixins = {
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: ${colors.green};
+      background-color: ${colors.blue};
       transition: ${theme.transition};
       opacity: 0.5;
+    }
+  `,
+
+  Button: css`
+    color: ${colors.lightBlue};
+    background-color: transparent;
+    border: 1px solid ${colors.lightBlue};
+    border-radius: ${theme.borderRadius};
+    padding: 0.75rem 1rem;
+    font-size: ${fontSizes.smish};
+    font-family: ${fonts.Calibre};
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ${theme.transition};
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    &:hover,
+    &:focus,
+    &:active {
+      color: ${colors.white};
+      background-color: ${colors.lightBlue};
+    }
+    &:after {
+      display: none !important;
     }
   `
 };
