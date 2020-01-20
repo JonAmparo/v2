@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import { Nav, Footer } from 'components';
+import { Nav, Footer, Project } from 'components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { GlobalStyle, theme } from 'styles';
+import { GlobalStyle } from 'styles';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <Nav />
+        <Project />
 
         <Footer />
       </Router>

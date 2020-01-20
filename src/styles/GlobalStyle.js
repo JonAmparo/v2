@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${colors.black};
-    color: ${colors.slate};
+    color: ${colors.white};
     line-height: 1.3;
     font-family: ${fonts.Calibre};
     font-size: ${fontSizes.xl};
@@ -64,10 +64,11 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    ${mixins.title}
+    font-weight: 500;
     font-family: ${fonts.GothamXNarrow};
-    color: ${colors.lightestSlate};
-    margin: 0 0 10px 0;
+    color: ${colors.white};
+    margin: 0;
   }
 
   h1 {

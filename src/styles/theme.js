@@ -1,30 +1,33 @@
 const theme = {
   colors: {
     black: '#141618',
+    white: '#ffffff',
+    red: '#b4001e',
+    green: '#64ffda',
+    gray: '#b5b3b3',
+    lightSlateGray: '#949394',
+
+    highlight: 'rgba(41, 61, 90, 0.99)',
+
+    lightNavy: '#172a45',
+    offWhite: '#dce7ff',
+
     dark: '#000007',
     darkestNavy: '#01050b',
     darkNavy: '#020c1b',
     darkSlateGray: '#4c4c4d',
     navy: '#0a192f',
-    lightNavy: '#172a45',
     darkGray: '#333f58',
     mediumGray: '#2d3952',
-    gray: '#b5b3b3',
     lightGray: '#606a86',
     slate: '#8892b0',
     lightSlate: '#a8b2d1',
-    lightSlateGray: '#949394',
     lightestSlate: '#ccd6f6',
-    offWhite: '#dce7ff',
-    white: '#e6f1ff',
     pink: '#FF647F',
-    red: '#b4001e',
     yellow: '#FFC464',
     orange: '#FF9E64',
-    green: '#64ffda',
     blue: '#71AFFF',
     darkBlue: '#1D7FFC',
-    highlight: 'rgba(41, 61, 90, 0.99)',
     transGreen: 'rgba(100, 255, 218, 0.07)',
     transNavy: 'rgba(10, 25, 47, 0.7)',
     shadowNavy: 'rgba(2, 12, 27, 0.7)'
@@ -46,7 +49,10 @@ const theme = {
     xl: '20px',
     xxl: '22px',
     xxxl: '26px',
-    h3: '32px'
+    display4: '32px',
+    display3: '36px',
+    display2: '40px',
+    display1: '44px'
   },
 
   easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',

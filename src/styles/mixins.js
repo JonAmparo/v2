@@ -16,6 +16,13 @@ const mixins = {
     align-items: center;
   `,
 
+  title: css`
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: normal;
+    color: ${colors.white};
+  `,
+
   outline: css`
     outline: 1px solid red;
   `,
