@@ -6,6 +6,10 @@ const { colors } = theme;
 
 const StyledContainer = styled.main``;
 
+const Margintop = styled.div`
+  margin-top: 50px;
+`;
+
 const Centered = styled.div`
   ${mixins.flexCenter}
 `;
@@ -47,14 +51,14 @@ const Card = styled.div`
 const Home = () => {
   return (
     <StyledContainer>
-      <div>
+      <Margintop>
         <Centered>
           <h1>Hey, It's Jonathan Amparo</h1>
         </Centered>
         <Centered>
           <p>I'm a web developer located in Washington, DC.</p>
         </Centered>
-      </div>
+      </Margintop>
 
       <SectionAboutMe>
         <h2>About me</h2>
