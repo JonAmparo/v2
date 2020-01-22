@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import theme from './theme';
-import media from './media';
+// import media from './media';
 const { colors, fontSizes, fonts } = theme;
 
 const mixins = {
@@ -99,6 +99,15 @@ const mixins = {
     }
     &:after {
       display: none !important;
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: transparent;
+
+      cursor: default;
+      color: ${colors.darkGray};
+      border: 1px solid ${colors.darkGray};
     }
   `
 };

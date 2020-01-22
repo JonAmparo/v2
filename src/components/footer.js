@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { navLinks, name, socialMedia } from 'config';
-import { FormattedIcon, IconJonLogo } from 'components/icons';
-import { theme, media, mixins } from 'styles';
+import { SocialLinks } from 'components';
+
+import { navLinks, name } from 'config';
+import {  IconJonLogo } from 'components/icons';
+import { theme, mixins } from 'styles';
 const { fonts, colors, fontSizes } = theme;
 
 const StyledContainer = styled.footer`
@@ -16,6 +17,8 @@ const StyledContainer = styled.footer`
   color: ${colors.lightSlateGray};
   padding: 30px 8vmin 25px;
   display: block;
+  position: relative;
+  background-color: ${colors.black};
 `;
 
 const FooterLogo = styled.a`
@@ -57,29 +60,6 @@ const FooterName = styled.div`
   margin: 0 auto 30px;
 `;
 
-const StyledList = styled.ul`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0;
-  margin: 0 auto 30px;
-  list-style: none;
-`;
-
-const StyledLink = styled.a`
-  ${mixins.link};
-  padding: 10px;
-  margin: 0 5px;
-  &:hover,
-  &:focus {
-    transform: translateY(-6px);
-  }
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-`;
-
 const Footer = () => {
   return (
     <StyledContainer>
@@ -98,24 +78,9 @@ const Footer = () => {
 
       <FooterHr />
       <FooterName>
-        All materials &copy; {name} {new Date().getFullYear()}
+        {name} {new Date().getFullYear()}
       </FooterName>
-
-      <StyledList>
-        {socialMedia &&
-          socialMedia.map(({ url, name }, i) => (
-            <li key={i}>
-              <StyledLink
-                href={url}
-                target='_blank'
-                rel='nofollow noopener noreferrer'
-                aria-label={name}
-              >
-                <FormattedIcon name={name} />
-              </StyledLink>
-            </li>
-          ))}
-      </StyledList>
+      <SocialLinks float='center' />
     </StyledContainer>
   );
 };

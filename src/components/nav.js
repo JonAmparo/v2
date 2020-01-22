@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navLinks, name } from 'config';
 import { IconJonLogo } from 'components/icons';
-import { theme, media, mixins } from 'styles';
+import { theme, mixins } from 'styles';
 const { fonts, colors, fontSizes } = theme;
 
 const StyledContainer = styled.nav`

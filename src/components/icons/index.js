@@ -11,6 +11,8 @@ import IconLocation from './location';
 import IconStar from './star';
 import IconFork from './fork';
 import FormattedIcon from './formattedIcon';
+import IconCode from './code';
+import IconEye from './eye';
 
 export {
   IconLogo,
@@ -25,5 +27,7 @@ export {
   IconLocation,
   IconStar,
   IconFork,
-  FormattedIcon
+  FormattedIcon,
+  IconCode,
+  IconEye
 };

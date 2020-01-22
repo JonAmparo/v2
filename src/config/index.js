@@ -13,6 +13,8 @@ module.exports = {
   location: 'Washington, DC',
   email: 'jonathanmamparo@gmail.com',
   github: 'https://github.com/jonamparo',
+  twitter: 'https://twitter.com/JonAmparo16',
+  linkedin: 'https://www.linkedin.com/in/jonathanamparo/',
   twitterHandle: '@jonamparo16',
   socialMedia: [
     {

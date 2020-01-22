@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { navLinks, name, socialMedia, username } from 'config';
-import { fetchPopularRepos } from 'utils/api';
-import {
-  FormattedIcon,
-  IconJonLogo,
-  IconStar,
-  IconFork
-} from 'components/icons';
-import { theme, media, mixins } from 'styles';
-const { fonts, colors, fontSizes } = theme;
+
+import { username } from 'config';
+import { Projects, Social } from 'components';
+import { IconStar } from 'components/icons';
+import { theme } from 'styles';
+const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.main`
   display: grid;
@@ -49,6 +42,7 @@ const ProjectSocial = styled.div`
 const ProjectText = styled.p`
   color: ${colors.gray}
   font-display: swap;
+  word-wrap: break-word;
 `;
 
 const SectionProject = styled.section`
@@ -60,24 +54,8 @@ const Title = styled.h2`
   font-size: ${fontSizes.display1};
 `;
 
-const TitleH3 = styled.h3`
-  font-size: ${fontSizes.display4};
-  margin-top: 30px;
-`;
-
-const Text = styled.p`
-  color: ${colors.gray};
-  font-display: swap;
-`;
-
 const SectionGithub = styled.section`
   grid-column: 3;
-`;
-
-const StyledButton = styled.a`
-  ${mixins.Button};
-  margin-top: 10px;
-  width: 100%;
 `;
 
 const Table = styled.table`
@@ -139,9 +117,9 @@ const Project = () => {
   }, []);
 
   // todo: sort by desc date pushed
-  repos.map(repo => {
-    console.log(repo.pushed_at);
-  });
+  // repos.map(repo => {
+  //   console.log(repo.pushed_at);
+  // });
 
   return (
     <StyledContainer>
@@ -149,18 +127,14 @@ const Project = () => {
         <SideTitle>Projects</SideTitle>
         <ProjectSocial>
           <ProjectText>
-            Follow me on Github or Twitter if you want, I suppose.
+            Here are some of my projects. Check them out. Feel free to hit me
+            up.
           </ProjectText>
         </ProjectSocial>
       </SectionText>
       <SectionProject>
         <Title>Projects</Title>
-        <TitleH3>Gravitus Gym Application</TitleH3>
-        <Text>
-          Inspired from the iOS application called Gravitus. I used it as a tool
-          to further my learning and understanding of React.
-        </Text>
-        <StyledButton>View Project</StyledButton>
+        <Projects />
       </SectionProject>
       <SectionGithub>
         <Title>Github</Title>
@@ -183,10 +157,8 @@ const Project = () => {
           </Table>
         ))}
       </SectionGithub>
+      <Social />
     </StyledContainer>
   );
 };
-
-Project.propTypes = {};
-
 export default Project;
