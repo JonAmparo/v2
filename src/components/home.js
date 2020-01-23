@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { SocialLinks } from 'components';
 import { theme, mixins } from 'styles';
-const { colors } = theme;
+import FontFaces from 'styles/fonts';
+const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.main``;
 
@@ -43,7 +44,7 @@ const Card = styled.div`
 
   p {
     color: #b5b3b3;
-    font-size: 18px;
+    font-size: ${fontSizes.lg}
     font-display: swap;
   }
 `;

@@ -71,26 +71,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  h1 {
-    &.big-title {
-      font-size: 80px;
-      line-height: 1.1;
-      margin: 0;
-      ${media.desktop`font-size: 70px;`};
-      ${media.tablet`font-size: 60px;`};
-      ${media.phablet`font-size: 50px;`};
-      ${media.phone`font-size: 40px;`};
-    }
-
-    &.medium-title {
-      font-size: 60px;
-      line-height: 1.1;
-      margin: 0;
-      ${media.desktop`font-size: 50px;`};
-      ${media.tablet`font-size: 40px;`};
-    }
-  }
-
   img {
     width: 100%;
     max-width: 100%;

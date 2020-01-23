@@ -3,21 +3,14 @@ const theme = {
     black: '#141618',
     white: '#ffffff',
     red: '#b4001e',
-    green: '#64ffda',
     gray: '#b5b3b3',
     lightSlateGray: '#949394',
-
     highlight: 'rgba(41, 61, 90, 0.99)',
-
     lightNavy: '#172a45',
     offWhite: '#dce7ff',
     lightBlue: '#92ABE1',
-
     dark: '#000007',
     darkestNavy: '#01050b',
-    darkNavy: '#020c1b',
-    darkSlateGray: '#4c4c4d',
-    navy: '#0a192f',
     darkGray: '#333f58',
     mediumGray: '#2d3952',
     lightGray: '#606a86',
@@ -28,11 +21,7 @@ const theme = {
     yellow: '#FFC464',
     orange: '#FF9E64',
     blue: '#71AFFF',
-    darkBlue: '#1D7FFC',
-    transGreen: 'rgba(100, 255, 218, 0.07)',
-    transYellow: 'rgba(255,255,0, 0.07)',
-    transNavy: 'rgba(10, 25, 47, 0.7)',
-    shadowNavy: 'rgba(2, 12, 27, 0.7)'
+    darkBlue: '#1D7FFC'
   },
 
   fonts: {
@@ -54,7 +43,8 @@ const theme = {
     display4: '32px',
     display3: '36px',
     display2: '40px',
-    display1: '44px'
+    display1: '44px',
+    title: '69px'
   },
 
   easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
@@ -67,17 +57,7 @@ const theme = {
 
   tabHeight: 42,
   tabWidth: 120,
-  radius: 3,
-
-  gradient: `linear-gradient(0.4turn, #64d6ff, #64ffda)`,
-
-  loaderDelay: `6`,
-
-  hamburgerWidth: 30,
-  hamBefore: `top 0.1s ease-in 0.25s, opacity 0.1s ease-in`,
-  hamBeforeActive: `top 0.1s ease-out, opacity 0.1s ease-out 0.12s`,
-  hamAfter: `bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)`,
-  hamAfterActive: `bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s`
+  radius: 3
 };
 
 export default theme;

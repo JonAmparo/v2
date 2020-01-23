@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { SocialLinks } from 'components';
 
 import { navLinks, name } from 'config';
-import {  IconJonLogo } from 'components/icons';
+import { IconJonLogo } from 'components/icons';
 import { theme, mixins } from 'styles';
 const { fonts, colors, fontSizes } = theme;
 
@@ -54,7 +54,7 @@ const FooterHr = styled.hr`
   margin: 0 auto 30px;
 `;
 
-const FooterName = styled.div`
+const FooterName = styled.p`
   font-size: ${fontSizes.lg};
   color: ${colors.gray};
   margin: 0 auto 30px;
@@ -78,9 +78,20 @@ const Footer = () => {
 
       <FooterHr />
       <FooterName>
-        {name} {new Date().getFullYear()}
+        {name} {new Date().getFullYear()} <br />
       </FooterName>
       <SocialLinks float='center' />
+
+      <FooterName>
+        Inspired by{' '}
+        <a
+          href='https://github.com/sdras'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Sarah Drasner
+        </a>
+      </FooterName>
     </StyledContainer>
   );
 };

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Data } from 'data';
 import { IconCode, IconEye } from 'components/icons';
-import { theme, mixins } from 'styles';
+import { theme, mixins, media } from 'styles';
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.div`
@@ -26,7 +26,7 @@ const ButtonContainer = styled.div`
   width: 100%;
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
   ${mixins.Button};
   margin-top: 10px;
   display: inline-block;
@@ -44,6 +44,18 @@ const StyledButton = styled.button`
 const Image = styled.img`
   width: 100%;
   margin-top: 25px;
+
+  ${media.sm`
+    height: 500px;
+  `};
+
+  ${media.xs`
+    height: 400px;
+  `};
+
+  ${media.phablet`
+  height: 241px;
+`};
 `;
 
 const Projects = () => (
@@ -87,9 +99,9 @@ const Project = ({ Data }) => {
         )}
       </ButtonContainer>
 
-      <a href={demo} target='_blank' rel='noopener noreferrer'>
-        <Image srcSet={img} />
-      </a>
+      {/* <a href={demo} target='_blank' rel='noopener noreferrer'> */}
+      <Image srcSet={img} />
+      {/* </a> */}
     </StyledContainer>
   );
 };

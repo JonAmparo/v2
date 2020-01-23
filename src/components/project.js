@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
 import { username } from 'config';
-import { Projects, Social } from 'components';
+import { Projects } from 'components';
 import { IconStar } from 'components/icons';
-import { theme } from 'styles';
+import { theme, media } from 'styles';
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.main`
@@ -12,12 +11,28 @@ const StyledContainer = styled.main`
   grid-gap: 8vmin;
   grid-template-columns: 1fr 2fr 2fr;
   margin: 8vmin;
+
+  ${media.sm`
+    grid-gap: 5vmin;
+    grid-template:
+        'a'
+        'b'
+        'c';
+    margin: 4vmin;
+  `}
 `;
 
 const SectionText = styled.section`
   grid-column: 1/2;
   position: fixed;
   margin: 0px;
+
+  ${media.sm`
+    grid-area: a;
+    height: 150px;
+    margin: 30px 0;
+    position: relative;
+  `}
 `;
 
 const SideTitle = styled.h1`
@@ -28,8 +43,14 @@ const SideTitle = styled.h1`
   top: 0;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  font-size: 7.4vmin;
+  font-size: ${fontSizes.title};
+
   text-transform: uppercase;
+
+  ${media.sm`
+    font-size: ${fontSizes.display1};
+    left: 46px;
+  `};
 `;
 
 const ProjectSocial = styled.div`
@@ -37,10 +58,16 @@ const ProjectSocial = styled.div`
   position: fixed;
   line-height: 1.4;
   width: 210px;
+
+  ${media.sm`
+    position: relative;
+    bottom: auto;
+    margin-left: 70px;
+`}
 `;
 
 const ProjectText = styled.p`
-  color: ${colors.gray}
+  color: ${colors.gray};
   font-display: swap;
   word-wrap: break-word;
 `;
@@ -48,6 +75,10 @@ const ProjectText = styled.p`
 const SectionProject = styled.section`
   grid-column: 2/3;
   margin: 0px;
+
+  ${media.sm`
+    grid-area: b;
+  `}
 `;
 
 const Title = styled.h2`
@@ -56,6 +87,10 @@ const Title = styled.h2`
 
 const SectionGithub = styled.section`
   grid-column: 3;
+
+  ${media.sm`
+    grid-area: c;
+  `}
 `;
 
 const Table = styled.table`
@@ -92,7 +127,7 @@ const Td = styled.td`
 `;
 const H3 = styled.h3`
   padding-bottom: 5px;
-  font-size: 25px;
+  font-size: ${fontSizes.xxl};
 `;
 
 const Atag = styled.a`
@@ -103,11 +138,15 @@ const Atag = styled.a`
 const Project = () => {
   const [repos, setRepos] = useState([]);
 
+  // Todo: add pushed at date
+  // let arr = repos;
+  // console.log('repos:', repos);
+
   useEffect(() => {
     fetch(`https://api.github.com/users/${username}/repos`)
       .then(response => response.json())
       .then(json => {
-        setRepos(
+        return setRepos(
           json.map(repos => {
             return repos;
           })
@@ -116,15 +155,10 @@ const Project = () => {
       .catch(e => console.error(e));
   }, []);
 
-  // todo: sort by desc date pushed
-  // repos.map(repo => {
-  //   console.log(repo.pushed_at);
-  // });
-
   return (
     <StyledContainer>
       <SectionText>
-        <SideTitle>Projects</SideTitle>
+        <SideTitle>Portfolio</SideTitle>
         <ProjectSocial>
           <ProjectText>
             Here are some of my projects. Check them out. Feel free to hit me
@@ -138,10 +172,10 @@ const Project = () => {
       </SectionProject>
       <SectionGithub>
         <Title>Github</Title>
-        {repos.map((repo, index) => (
-          <Table key={index}>
-            <Tbody>
-              <Tr>
+        <Table>
+          <Tbody>
+            {repos.map((repo, index) => (
+              <Tr key={index}>
                 <Td>
                   <H3>
                     <Atag href={repo.html_url}>{repo.name}</Atag>
@@ -153,11 +187,10 @@ const Project = () => {
                   <p>{repo.description}</p>
                 </Td>
               </Tr>
-            </Tbody>
-          </Table>
-        ))}
+            ))}
+          </Tbody>
+        </Table>
       </SectionGithub>
-      <Social />
     </StyledContainer>
   );
 };

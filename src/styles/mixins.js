@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 import theme from './theme';
-// import media from './media';
 const { colors, fontSizes, fonts } = theme;
 
 const mixins = {
@@ -45,16 +44,14 @@ const mixins = {
   inlineLink: css`
     display: inline-block;
     text-decoration: none;
-    text-decoration-skip-ink: auto;
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
-    color: ${colors.blue};
+    color: ${colors.pink};
     &:hover,
     &:focus,
     &:active {
-      color: ${colors.blue};
-      outline: 0;
+      color: ${colors.red};
       &:after {
         width: 100%;
       }
@@ -62,17 +59,6 @@ const mixins = {
         color: ${colors.blue} !important;
         transition: ${theme.transition};
       }
-    }
-    &:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 1px;
-      position: relative;
-      bottom: 0.37em;
-      background-color: ${colors.blue};
-      transition: ${theme.transition};
-      opacity: 0.5;
     }
   `,
 
