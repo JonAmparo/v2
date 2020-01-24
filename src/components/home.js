@@ -2,21 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { SocialLinks } from 'components';
 import { theme, mixins } from 'styles';
+import jonamparo from '../images/jonamparo.jpg';
 import FontFaces from 'styles/fonts';
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.main``;
 
 const Margintop = styled.div`
-  margin-top: 50px;
+  // margin-top: 10vh;
+  margin: 4vmin 8vmin;
 `;
 
 const Centered = styled.div`
-  ${mixins.flexCenter}
+  // ${mixins.flexCenter}
+  // margin: 4vmin 8vmin;
 `;
 
 const SectionAboutMe = styled.section`
-  padding: 8vmin;
+  padding: 6vmin 8vmin 8vmin;
   height: auto;
 
   h2 {
@@ -25,7 +28,7 @@ const SectionAboutMe = styled.section`
 `;
 
 const Card = styled.div`
-  padding: 6vmin 6vmin 10vmin !important;
+  padding: 6vmin 6vmin 14vmin !important;
   width: calc(90vw - 8vmin);
   background: rgba(0, 0, 0, 0.4);
   border-left: 1px solid ${colors.red};
@@ -57,33 +60,29 @@ const Home = () => {
           <h1>Hey, It's Jonathan Amparo</h1>
         </Centered>
         <Centered>
-          <p>I'm a web developer located in Washington, DC.</p>
+          <p>I'm a web developer located in Burtonsville, Maryland.</p>
         </Centered>
       </Margintop>
 
       <SectionAboutMe>
         <h2>About me</h2>
         <Card>
-          <img
-            alt=''
-            srcSet='https://secure.gravatar.com/avatar/d3038fdf1c59b4021007b26f1ebf3893'
-          />
+          <img alt='' srcSet={jonamparo} />
           <p>
-            Duis ut ultrices turpis, fringilla pulvinar tortor. Praesent in
-            cursus lacus. Praesent vestibulum tortor ac leo viverra, quis
-            pharetra lacus maximus. Praesent ut luctus massa, non maximus sem.
-            Aenean eleifend justo nec condimentum lacinia. Phasellus accumsan
-            risus eu magna tincidunt, non maximus justo facilisis. In ut est at
-            libero placerat imperdiet nec sit amet justo. Pellentesque habitant
-            morbi tristique senectus et netus et malesuada fames ac turpis
-            egestas. Suspendisse ex eros, malesuada mattis scelerisque eu,
-            semper id dolor. Donec nec mauris et nisi pulvinar finibus. Cras
-            sapien nulla, semper in mi quis, porttitor auctor ante. Pellentesque
-            bibendum nisi vitae urna ullamcorper, vel gravida lacus imperdiet.
-            Nam ultrices massa libero, viverra dictum enim finibus sed. Integer
-            sit amet nisi a leo elementum semper facilisis a tellus. Curabitur
-            at lectus vitae tortor congue pharetra vitae vel urna. Curabitur
-            malesuada porttitor efficitur.
+            Having graduated from a one year and four months long coding boot
+            camp located in the heart of Montreal, Quebec. I quickly found
+            employment with the knowledge and skills I learned as a Front-End
+            Web Developer. Now that I'm back home in the US, I'm searching for
+            employment as a Front-End, Back-End, or a Full-Stack Developer. I'm
+            currently located in Burtonsville, Maryland and plan to stick around
+            the area. My favorite technologies to work with are Javascript,
+            React, SCSS, CSS, HTML, JQuery, Bootstrap, MySQL, and Redux. I'm
+            also familiar with Nodejs, MongoDB, Redux, PHP, Java, and VB .NET.
+            I'm making strides every day to become a better developer, problem
+            solver, learner and mentor. I'm a positive person, a clear
+            communicator, a good teammate, a hard worker (work hard, play hard),
+            and ready to build web technology and/or software with values that I
+            can get behind.
           </p>
           <SocialLinks float='right' />
         </Card>

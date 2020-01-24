@@ -58,6 +58,11 @@ const FooterName = styled.p`
   font-size: ${fontSizes.lg};
   color: ${colors.gray};
   margin: 0 auto 30px;
+
+  p {
+    font-size: ${fontSizes.md};
+    margin-bottom: 0;
+  }
 `;
 
 const Footer = () => {
@@ -78,20 +83,19 @@ const Footer = () => {
 
       <FooterHr />
       <FooterName>
-        {name} {new Date().getFullYear()} <br />
+        Created by {name} {new Date().getFullYear()}
+        <p>
+          Inspired by{' '}
+          <a
+            href='https://github.com/sdras'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Sarah Drasner
+          </a>
+        </p>
       </FooterName>
       <SocialLinks float='center' />
-
-      <FooterName>
-        Inspired by{' '}
-        <a
-          href='https://github.com/sdras'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Sarah Drasner
-        </a>
-      </FooterName>
     </StyledContainer>
   );
 };
